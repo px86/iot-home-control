@@ -1,0 +1,4 @@
+#+TITLE: IoT Home Control
+#+AUTHOR: Pushkar Raj
+
+An *IoT-based Smart Home Management Platform* built with /Java/, /Spring Boot/, and /Docker/, simulating connected devices to manage and monitor home systems. This project demonstrates /MQTT/ messaging, real-time device status tracking, and remote control of smart home devices via a web interface, making it ideal for demonstrating IoT architecture and smart home automation.
