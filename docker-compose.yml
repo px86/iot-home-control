@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  mosquitto:
+    image: my-mosquitto:latest
+    container_name: my-mosquitto
+    ports:
+      - 1883:1883
+      - 9001:9001
+    build:
+      context: ./mosquitto/
+      dockerfile: Dockerfile
+    networks:
+      - "iot-home-control"
+
+  thermostat-1:
+    image: thermostat:latest
+    container_name: thermostat-1
+    build:
+      context: ./devices/thermostat/
+      dockerfile: Dockerfile
+    # ports:
+    #   - "8080:8080"
+    depends_on:
+      - mosquitto
+    networks:
+      - "iot-home-control"
+
+networks:
+  iot-home-control:
+    name: iot-home-control
