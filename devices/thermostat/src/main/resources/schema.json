@@ -1,0 +1,28 @@
+{
+  "device_id": "3ce20934-a99b-4ebb-9ffc-d41223f898ce",
+  "device_name": "smart_thermostat",
+  "properties": {
+    "current_temperature": {
+      "type": "number",
+      "unit": "Celsius"
+    },
+    "target_temperature": {
+      "type": "number",
+      "unit": "Celsius"
+    },
+    "mode": {
+      "type": "string",
+      "enum": ["heating", "cooling", "off"]
+    }
+  },
+  "operations": {
+    "set_target_temperature": {
+      "parameters": {
+        "target_temperature": {
+          "type": "number",
+          "unit": "Celsius"
+        }
+      }
+    }
+  }
+}
