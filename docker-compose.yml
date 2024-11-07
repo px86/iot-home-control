@@ -27,9 +27,21 @@ services:
     build:
       context: ./devices/thermostat/
       dockerfile: Dockerfile
-    # ports:
-    #   - "8080:8080"
     depends_on:
+      - mosquitto
+    networks:
+      - "iot-home-control"
+
+  device-registry:
+    image: device-registry:latest
+    container_name: device-registry
+    build:
+      context: ./device-registry/
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    depends_on:
+      - redis
       - mosquitto
     networks:
       - "iot-home-control"
