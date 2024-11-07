@@ -13,6 +13,14 @@ services:
     networks:
       - "iot-home-control"
 
+  redis:
+    image: redis:7.4.1-alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - "iot-home-control"
+
   thermostat-1:
     image: thermostat:latest
     container_name: thermostat-1
