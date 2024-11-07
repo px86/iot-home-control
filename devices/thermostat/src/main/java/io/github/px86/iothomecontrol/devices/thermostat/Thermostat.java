@@ -1,8 +1,6 @@
 package io.github.px86.iothomecontrol.devices.thermostat;
 
-import org.springframework.stereotype.Component;
 
-@Component
 public class Thermostat {
   private String deviceId;
   private String deviceName;
